@@ -5,5 +5,5 @@ The maths is fairly complicated, view the turtorial <a href="https://www.youtube
 This repository contains the complete code.<br />
 
 
-![alt text](https://raw.githubusercontent.com/agarwalkaushal/Portal-Room/master/Demo.mp4)
+![alt text](https://raw.githubusercontent.com/agarwalkaushal/Portal-Room/master/Demo.gif)
 
