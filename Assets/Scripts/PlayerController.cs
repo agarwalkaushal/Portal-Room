@@ -22,7 +22,6 @@ public class PlayerController : MonoBehaviour {
 
         transform.position += move;
         transform.Rotate(rotation);
-        //transform.rotation = Quaternion.Euler(rotation);
 
     }
 }
