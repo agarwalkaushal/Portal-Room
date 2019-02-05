@@ -7,13 +7,21 @@ public class PlayerController : MonoBehaviour {
     public float rotate_speed;
     public float translate_speed;
 
-	void Update () {
+	void FixedUpdate () {
 
-        var x = Input.GetAxis("Horizontal") * Time.deltaTime;
-        var z = Input.GetAxis("Vertical") * Time.deltaTime;
+        float horizontalInput = Input.GetAxis("Horizontal");
+        float verticalInput = Input.GetAxis("Vertical");
+        float mouseInput = Input.GetAxis("Mouse X");
 
-        transform.Rotate(0, x*rotate_speed, 0);
-        transform.Translate(0, 0, z*translate_speed);
+        Vector3 moveHorizontal = transform.right * horizontalInput;
+        Vector3 moveVertical = transform.forward * verticalInput;
+
+        Vector3 move = (moveHorizontal + moveVertical).normalized * translate_speed * Time.fixedDeltaTime;
+
+        Vector3 rotation = new Vector3(0f, mouseInput, 0f) * rotate_speed;
+
+        transform.position += move;
+        transform.rotation = Quaternion.Euler(rotation);
 
     }
 }
